@@ -40,7 +40,7 @@ $(NAME)_DEFINES += SFLASH_SUPPORT_SST_PARTS \
 NAME := ISMART
 
 $(NAME)_SOURCES := ismart.c ismart.h \
-product_def/controls_def.c product_def/hal_functions.c product_def/hal_functions.h product_def/product.c product_def/product.h product_def/sensors_def.c 
+product/controls_def.c product/hal_functions.c product/hal_functions.h product/product.c product/product.h product/sensors_def.c 
 
 $(NAME)_COMPONENTS := protocols/HTTP apps/iMatrix
 #apps/SierraTelecom/drivers/spi_flash #protocols/SNTP libraries/drivers/bluetooth_le

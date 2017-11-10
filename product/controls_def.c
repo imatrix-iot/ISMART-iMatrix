@@ -30,9 +30,10 @@
 */
 
 /** @file controls_def.c
-*  Created on: Oct 07, 2017
+*  Created on: Nov 10, 2017
 *  Author: Auto Generated Code Do NOT Modify
 */
+
 #include <stdint.h>
 #include <stdbool.h>
 
@@ -67,47 +68,55 @@
 *               Variable Definitions
 ******************************************************/
 
-const imx_control_sensor_block_t imx_controls_defaults[ IMX_NO_CONTROLS ] = {
+const imx_control_sensor_block_t imx_controls_defaults[ IMX_NO_CONTROLS ] =  {
     {
-    .name = "LED Red",
-    .id = LED_RED_313851464,
-    .sample_rate = 0,
-    .sample_batch_size = 1,
-    .percent_change_to_send = 1,
-    .enabled = 1,
-    .valid = 0,
-    .read_only = 0,
-    .send_on_percent_change = 0,
-    .data_type = IMX_UINT32,
-    .use_warning_level_low = 0,
-    .use_warning_level_high  = 0,
-    .warning_level_low[ 0 ]  = { 0 },
-    .warning_level_low[ 1 ]  = { 0 },
-    .warning_level_low[ 2 ]  = { 0 },
-    .warning_level_high[ 0 ] = { 0 },
-    .warning_level_high[ 1 ] = { 0 },
-    .warning_level_high[ 2 ] = { 0 },
+        .name = "LED Red",
+        .id = LED_RED_313851464,
+        .sample_rate = 0,
+        .sample_batch_size = 0,
+        .percent_change_to_send = 1,
+        .enabled = 1,
+        .valid = 0,
+        .read_only = 0,
+        .poll_rate = 0,
+        .send_on_percent_change = 0,
+        .data_type = IMX_UINT32,
+        .use_warning_level_low = 0,
+        .use_warning_level_high  = 0,
+        .set_default = 1,
+        .send_imatrix = 0,
+        .default_value = { 0 },
+        .warning_level_low[ 0 ]  = { 0 },
+        .warning_level_low[ 1 ]  = { 0 },
+        .warning_level_low[ 2 ]  = { 0 },
+        .warning_level_high[ 0 ] = { 0 },
+        .warning_level_high[ 1 ] = { 0 },
+        .warning_level_high[ 2 ] = { 0 },
     },
     {
-    .name = "LED Green",
-    .id = LED_GREEN_993043257,
-    .sample_rate = 0,
-    .sample_batch_size = 1,
-    .percent_change_to_send = 1,
-    .enabled = 1,
-    .valid = 0,
-    .read_only = 0,
-    .send_on_percent_change = 0,
-    .data_type = IMX_UINT32,
-    .use_warning_level_low = 0,
-    .use_warning_level_high  = 0,
-    .warning_level_low[ 0 ]  = { 0 },
-    .warning_level_low[ 1 ]  = { 0 },
-    .warning_level_low[ 2 ]  = { 0 },
-    .warning_level_high[ 0 ] = { 0 },
-    .warning_level_high[ 1 ] = { 0 },
-    .warning_level_high[ 2 ] = { 0 },
-    },
+        .name = "LED Green",
+        .id = LED_GREEN_993043257,
+        .sample_rate = 0,
+        .sample_batch_size = 0,
+        .percent_change_to_send = 1,
+        .enabled = 1,
+        .valid = 0,
+        .read_only = 0,
+        .poll_rate = 0,
+        .send_on_percent_change = 0,
+        .data_type = IMX_UINT32,
+        .use_warning_level_low = 0,
+        .use_warning_level_high  = 0,
+        .set_default = 1,
+        .send_imatrix = 0,
+        .default_value = { 0 },
+        .warning_level_low[ 0 ]  = { 0 },
+        .warning_level_low[ 1 ]  = { 0 },
+        .warning_level_low[ 2 ]  = { 0 },
+        .warning_level_high[ 0 ] = { 0 },
+        .warning_level_high[ 1 ] = { 0 },
+        .warning_level_high[ 2 ] = { 0 },
+    }
 };
 
 /******************************************************
@@ -115,17 +124,17 @@ const imx_control_sensor_block_t imx_controls_defaults[ IMX_NO_CONTROLS ] = {
 ******************************************************/
 const imx_functions_t imx_control_functions[ IMX_NO_CONTROLS ] = {
     {
-    .load_config_defaults = load_config_defaults_generic_ccb,
-    .init = NULL,
-    .update = NULL,
-    .arg = CCB_LED_RED_313851464,
+        .load_config_defaults = load_config_defaults_generic_ccb,
+        .init = NULL,
+        .update = NULL,
+        .arg = CCB_LED_RED_313851464,
     },
     {
-    .load_config_defaults = load_config_defaults_generic_ccb,
-    .init = NULL,
-    .update = NULL,
-    .arg = CCB_LED_GREEN_993043257,
-    },
+        .load_config_defaults = load_config_defaults_generic_ccb,
+        .init = NULL,
+        .update = NULL,
+        .arg = CCB_LED_GREEN_993043257,
+    }
 };
 
 /* [] END OF FILE */

@@ -28,23 +28,38 @@
 * of such system or application assumes all risk of such use and in doing
 * so, agrees to indemnity Sierra against all liability.
 */
-/** @file hal_functions.h
+
+/** @file hal_functions.c
 *
 *  Created on: Oct 07, 2017
 *  Author: Auto Generated Code Do NOT Modify
 *
+* - List of all Controls and Sensors included
 */
 
-#ifndef HAL_FUNCTIONS_H
-#define HAL_FUNCTIONS_H
+#include <stdint.h>
+#include <stdbool.h>
+#include <math.h>
 
+#include "wiced.h"
+#include "imatrix.h"
+
+#include "product.h"
+#include "hal_functions.h"
 /******************************************************
 *                      Macros
 ******************************************************/
-
+#ifdef PRINT_DEBUGS_FOR_HAL
+#undef PRINTF
+#define PRINTF(...) if( ( dcb.log_messages & DEBUGS_FOR_HAL ) != 0x00 ) st_log_printf(__VA_ARGS__)
+#elif !defined PRINTF
+#define PRINTF(...)
+#endif
 /******************************************************
 *                    Constants
 ******************************************************/
+#define FLASH_SIZE            2097152
+#define LAST_DEVICE_ADDRESS   (0x1FFFFF)
 
 /******************************************************
 *                   Enumerations
@@ -57,23 +72,59 @@
 /******************************************************
 *                    Structures
 ******************************************************/
+
+/******************************************************
+*               Function Declarations
+******************************************************/
+
+/******************************************************
+*               Variable Definitions
+******************************************************/
+
 /******************************************************
 *               Function Definitions
 ******************************************************/
-uint16_t get_no_controls(void);
-uint16_t get_no_sensors(void);
-uint32_t get_product_id(void);
-uint32_t get_organization_id(void);
-char *get_product_name(void);
-char *get_manufacturing_site(void);
-uint32_t get_flash_size(void);
-uint32_t get_last_device_address(void);
-uint16_t get_no_at_controls(void);
-uint16_t get_no_at_sensors(void);
-uint16_t imx_get_wifi_channel_scb(void);
-uint16_t imx_get_wifi_rssi_scb(void);
-uint16_t imx_get_wifi_bssid_scb(void);
-uint16_t imx_get_wifi_rf_noise_scb(void);
+inline uint16_t imx_get_no_controls(void)
+{
+    return IMX_NO_CONTROLS;
+}
+inline uint16_t imx_get_no_sensors(void)
+{
+    return IMX_NO_SENSORS;
+}
+inline uint32_t imx_get_product_id(void)
+{
+    return IMX_PRODUCT_ID;
+}
+inline uint32_t imx_get_manufacturer_id(void)
+{
+    return IMX_MANUFACTUER_ID;
+}
+inline char *imx_get_product_name(void)
+{
+    return IMX_PRODUCT_NAME;
+}
+inline char *imx_get_manufacturing_site(void)
+{
+    return IMX_MANUFACTURING_SITE;
+}
+inline uint16_t imx_get_wifi_channel_scb(void)
+{
+    return IMX_SCB_WI_FI_CHANNEL;
+}
+inline uint16_t imx_get_wifi_rssi_scb(void)
+{
+    return IMX_SCB_WI_FI_RSSI;
+}
+inline uint16_t imx_get_wifi_bssid_scb(void)
+{
+    return IMX_SCB_WI_FI_BSSID;
+}
+inline uint16_t imx_get_wifi_rf_noise_scb(void)
+{
+    return IMX_SCB_WI_FI_RF_NOISE;
+}
+
 /**
 * @brief	Controls
 * @param
@@ -85,6 +136,4 @@ uint16_t imx_get_wifi_rf_noise_scb(void);
 * @param
 * @retval : None
 */
-#endif /* HAL_FUNCTIONS_H_ */
-
 /* [] END OF FILE */

@@ -36,7 +36,7 @@
 #include "imatrix.h"
 
 #include "version.h"
-#include "product_def/product.h"
+#include "product/product.h"
 /******************************************************
  *                      Macros
  ******************************************************/
