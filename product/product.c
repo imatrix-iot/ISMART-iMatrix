@@ -49,14 +49,6 @@
 *                    Constants
 ******************************************************/
 
-#define IMX_DEFAULT_ST_SSID             "iMatrix-2G"
-#define IMX_DEFAULT_ST_KEY              ""
-#define IMX_DEFAULT_ST_SECURITY         WICED_SECURITY_WPA2_AES_PSK
-
-#define IMX_DEFAULT_AP_SSID             "ISMART-ConnectKit"
-#define IMX_DEFAULT_AP_KEY              ""
-#define IMX_DEFAULT_AP_SECURITY         WICED_SECURITY_OPEN
-
 /******************************************************
 *                   Enumerations
 ******************************************************/
@@ -89,7 +81,7 @@ imx_imatrix_init_config_t imatrix_config = {
     .default_st_wpa = IMX_DEFAULT_ST_KEY,
     .default_ap_eap_mode = 0,
     .default_st_eap_mode = 0,
-    .default_ap_security_mode = WICED_SECURITY_OPEN,
+    .default_ap_security_mode = IMX_DEFAULT_AP_SECURITY,
     .default_st_security_mode = IMX_DEFAULT_ST_SECURITY,
     .no_sensors = IMX_NO_SENSORS,
     .no_controls = IMX_NO_CONTROLS,

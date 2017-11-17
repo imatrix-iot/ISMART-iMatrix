@@ -48,22 +48,30 @@
 /*
 * Define the Arduino Code used for this system - 00 No Arduino present
 */
-#define IMATRIX_ARDUINO_CODE	0x00
+#define IMATRIX_ARDUINO_CODE	        0x00
 
 /*
 * AT Command mode enabled
 */
-#define AT_COMMAND_MODE         0x01
+#define AT_COMMAND_MODE                 0x00
 
 /*
 * Product and Operating details
 */
-#define IMX_MANUFACTUER_ID     1583546208
-#define IMX_PRODUCT_ID         0x78086a96
-#define IMX_PRODUCT_NAME       "iMatrix ISMART Mercury"
-#define IMX_MANUFACTURING_SITE "bind.imatrix.io"
-#define IMX_IMATRIX_SITE       "dev.coap.imatrix.io"
-#define IMX_OTA_SITE           "ota.imatrix.io"
+#define IMX_MANUFACTUER_ID              1583546208
+#define IMX_PRODUCT_ID                  0x78086a96
+#define IMX_PRODUCT_NAME                "iMatrix ISMART Mercury"
+#define IMX_MANUFACTURING_SITE          "bind.imatrix.io"
+#define IMX_IMATRIX_SITE                "dev.coap.imatrix.io"
+#define IMX_OTA_SITE                    "ota.imatrix.io"
+
+#define IMX_DEFAULT_ST_SSID             "iMatrix-2G"
+#define IMX_DEFAULT_ST_KEY              "happydog"
+#define IMX_DEFAULT_ST_SECURITY         WICED_SECURITY_WPA2_AES_PSK
+
+#define IMX_DEFAULT_AP_SSID             "ISMART-ConnectKit"
+#define IMX_DEFAULT_AP_KEY              ""
+#define IMX_DEFAULT_AP_SECURITY         WICED_SECURITY_OPEN
 
 /*
 * Define Control IDs for Controls
