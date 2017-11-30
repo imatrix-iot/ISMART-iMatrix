@@ -24,13 +24,12 @@
 * not authorize its products for use in any products where a malfunction or
 * failure of the Sierra product may reasonably be expected to result in
 * significant property damage, injury or death ("High Risk Product"). By
-* including Sierra's product in a High Risk Product, the manufacturer
+* including Sierra's product in a High-Risk Product, the manufacturer
 * of such system or application assumes all risk of such use and in doing
-* so agrees to indemnity Sierra against all liability.
+* so, agrees to indemnity Sierra against all liability.
 */
 
-/** @file product.c
-*
+/** @file controls_def.c
 *  Created on: Nov 10, 2017
 *  Author: Auto Generated Code Do NOT Modify
 */
@@ -68,61 +67,72 @@
 /******************************************************
 *               Variable Definitions
 ******************************************************/
-imx_imatrix_init_config_t imatrix_config = {
-    .product_name = IMX_PRODUCT_NAME,
-    .device_name = IMX_PRODUCT_NAME,
-    .imatrix_bind_uri = "test_organization_2/bind",
-    .imatrix_public_url = IMX_IMATRIX_SITE,
-    .ota_public_url = IMX_OTA_SITE,
-    .manufacturing_url = IMX_MANUFACTURING_SITE,
-    .default_ap_ssid = IMX_DEFAULT_AP_SSID,
-    .default_ap_wpa = IMX_DEFAULT_AP_KEY,
-    .default_st_ssid = IMX_DEFAULT_ST_SSID,
-    .default_st_wpa = IMX_DEFAULT_ST_KEY,
-    .default_ap_eap_mode = 0,
-    .default_st_eap_mode = 0,
-    .default_ap_security_mode = IMX_DEFAULT_AP_SECURITY,
-    .default_st_security_mode = IMX_DEFAULT_ST_SECURITY,
-    .no_sensors = IMX_NO_SENSORS,
-    .no_controls = IMX_NO_CONTROLS,
-    .no_arduino_sensors = IMX_NO_ARDUINO_SENSORS,
-    .no_arduino_controls = IMX_NO_ARDUINO_CONTROLS,
-    .product_capabilities = ( IMX_WIFI_2_4GHZ | IMX_WIFI_5_2GHZ |IMX_WIFI_5_4GHZ | IMX_WIFI_5_8GHZ ),
-    .product_id = IMX_PRODUCT_ID,
-    .manufactuer_id = IMX_MANUFACTUER_ID,
-    .building_id = 0,
-    .level_id = 0,
-    .indoor_x = 0,
-    .indoor_y = 0,
-    //.longitude = IMX_LONGITUDE_DEFAULT,
-    //.latitude = IMX_LATITUDE_DEFAULT,
-    //.elevation = IMX_ELEVATION_DEFAULT,
-    .at_command_mode = AT_COMMAND_MODE,
-    .start_in_station_mode = true,
-    .log_wifi_AP = true,
-    .log_wifi_rssi = true,
-    .log_wifi_rfnoise = true,
-    .led_functions = {
-        {
-            imx_init_led_red_ismart,
-            imx_update_led_red_status_ismart,
-        },
-        {
-            imx_init_led_green_ismart,
-            imx_update_led_green_status_ismart,
-        },
-        {
-            imx_init_led_blue_ismart,
-            imx_update_led_blue_status_ismart,
-        },
+
+const imx_control_sensor_block_t imx_controls_defaults[ IMX_NO_CONTROLS ] =  {
+    {
+        .name = "LED Red",
+        .id = LED_RED_313851464,
+        .sample_rate = 0,
+        .sample_batch_size = 0,
+        .percent_change_to_send = 1,
+        .enabled = 1,
+        .read_only = 0,
+        .poll_rate = 0,
+        .send_on_percent_change = 0,
+        .data_type = IMX_UINT32,
+        .use_warning_level_low = 0,
+        .use_warning_level_high  = 0,
+        .set_default = 1,
+        .send_imatrix = 0,
+        .default_value = { 0 },
+        .warning_level_low[ 0 ]  = { 0 },
+        .warning_level_low[ 1 ]  = { 0 },
+        .warning_level_low[ 2 ]  = { 0 },
+        .warning_level_high[ 0 ] = { 0 },
+        .warning_level_high[ 1 ] = { 0 },
+        .warning_level_high[ 2 ] = { 0 },
     },
+    {
+        .name = "LED Green",
+        .id = LED_GREEN_993043257,
+        .sample_rate = 0,
+        .sample_batch_size = 0,
+        .percent_change_to_send = 1,
+        .enabled = 1,
+        .read_only = 0,
+        .poll_rate = 0,
+        .send_on_percent_change = 0,
+        .data_type = IMX_UINT32,
+        .use_warning_level_low = 0,
+        .use_warning_level_high  = 0,
+        .set_default = 1,
+        .send_imatrix = 0,
+        .default_value = { 0 },
+        .warning_level_low[ 0 ]  = { 0 },
+        .warning_level_low[ 1 ]  = { 0 },
+        .warning_level_low[ 2 ]  = { 0 },
+        .warning_level_high[ 0 ] = { 0 },
+        .warning_level_high[ 1 ] = { 0 },
+        .warning_level_high[ 2 ] = { 0 },
+    }
 };
 
 /******************************************************
 *               Function Definitions
 ******************************************************/
-/**
-* @brief
-* @param  None
-* @retval : None
-*/
+const imx_functions_t imx_control_functions[ IMX_NO_CONTROLS ] = {
+    {
+        .load_config_defaults = load_config_defaults_generic_ccb,
+        .init = NULL,
+        .update = NULL,
+        .arg = CCB_LED_RED_313851464,
+    },
+    {
+        .load_config_defaults = load_config_defaults_generic_ccb,
+        .init = NULL,
+        .update = NULL,
+        .arg = CCB_LED_GREEN_993043257,
+    }
+};
+
+/* [] END OF FILE */
