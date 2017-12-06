@@ -31,7 +31,7 @@
 
 /** @file hal_functions.c
 *
-*  Created on: Oct 07, 2017
+*  Created on: Dec 04, 2017
 *  Author: Auto Generated Code Do NOT Modify
 *
 * - List of all Controls and Sensors included
@@ -46,6 +46,11 @@
 
 #include "product.h"
 #include "hal_functions.h"
+
+
+
+
+
 /******************************************************
 *                      Macros
 ******************************************************/
@@ -108,22 +113,30 @@ inline char *imx_get_manufacturing_site(void)
 {
     return IMX_MANUFACTURING_SITE;
 }
+#ifdef IMX_SCB_WI_FI_CHANNEL
 inline uint16_t imx_get_wifi_channel_scb(void)
 {
     return IMX_SCB_WI_FI_CHANNEL;
 }
+#endif
+#ifdef IMX_SCB_WI_FI_RSSI
 inline uint16_t imx_get_wifi_rssi_scb(void)
 {
     return IMX_SCB_WI_FI_RSSI;
 }
+#endif
+#ifdef IMX_SCB_WI_FI_BSSID
 inline uint16_t imx_get_wifi_bssid_scb(void)
 {
     return IMX_SCB_WI_FI_BSSID;
 }
+#endif
+#ifdef IMX_SCB_WI_FI_RF_NOISE
 inline uint16_t imx_get_wifi_rf_noise_scb(void)
 {
     return IMX_SCB_WI_FI_RF_NOISE;
 }
+#endif
 
 /**
 * @brief	Controls

@@ -80,7 +80,7 @@ void application_start( )
      * Tell user version number - if they are watching the serial port.
      */
     imx_printf( PRINT_VERSION, MajorVersion, MinorVersion, HardwareVersion, BUILD_NUMBER );
-    imx_init( &imatrix_config, true, false );
+    imx_init( &imatrix_config, false, false );
         while( true )
             imx_process();
 }
