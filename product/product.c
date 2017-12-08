@@ -31,7 +31,7 @@
 
 /** @file product.c
 *
-*  Created on: Nov 10, 2017
+*  Created on: Dec 04, 2017
 *  Author: Auto Generated Code Do NOT Modify
 */
 
@@ -71,22 +71,21 @@
 imx_imatrix_init_config_t imatrix_config = {
     .product_name = IMX_PRODUCT_NAME,
     .device_name = IMX_PRODUCT_NAME,
-    .imatrix_bind_uri = "test_organization_2/bind",
+    .imatrix_bind_uri = IMX_BIND_URI,
     .imatrix_public_url = IMX_IMATRIX_SITE,
     .ota_public_url = IMX_OTA_SITE,
     .manufacturing_url = IMX_MANUFACTURING_SITE,
+    .default_ap_channel = IMX_DEFAULT_AP_CHANNEL,
     .default_ap_ssid = IMX_DEFAULT_AP_SSID,
     .default_ap_wpa = IMX_DEFAULT_AP_KEY,
     .default_st_ssid = IMX_DEFAULT_ST_SSID,
     .default_st_wpa = IMX_DEFAULT_ST_KEY,
     .default_ap_eap_mode = 0,
     .default_st_eap_mode = 0,
-    .default_ap_security_mode = IMX_DEFAULT_AP_SECURITY,
+    .default_ap_security_mode = WICED_SECURITY_OPEN,
     .default_st_security_mode = IMX_DEFAULT_ST_SECURITY,
     .no_sensors = IMX_NO_SENSORS,
     .no_controls = IMX_NO_CONTROLS,
-    .no_arduino_sensors = IMX_NO_ARDUINO_SENSORS,
-    .no_arduino_controls = IMX_NO_ARDUINO_CONTROLS,
     .product_capabilities = ( IMX_WIFI_2_4GHZ | IMX_WIFI_5_2GHZ |IMX_WIFI_5_4GHZ | IMX_WIFI_5_8GHZ ),
     .product_id = IMX_PRODUCT_ID,
     .manufactuer_id = IMX_MANUFACTUER_ID,
@@ -98,10 +97,22 @@ imx_imatrix_init_config_t imatrix_config = {
     //.latitude = IMX_LATITUDE_DEFAULT,
     //.elevation = IMX_ELEVATION_DEFAULT,
     .at_command_mode = AT_COMMAND_MODE,
-    .start_in_station_mode = true,
-    .log_wifi_AP = true,
-    .log_wifi_rssi = true,
-    .log_wifi_rfnoise = true,
+    .start_in_station_mode = IMX_START_IN_STATION_MODE ,
+    .log_wifi_AP = IMX_LOG_WIFI_AP,
+    .log_wifi_rssi = IMX_LOG_WIFI_RSSI,
+    .log_wifi_rfnoise = IMX_LOG_WIFI_RFNOISE,
+    .interface = IMX_INTERFACE,
+    .history_size = IMATRIX_HISTORY_SIZE,
+    .no_variable_length_pools = IMX_NO_VAR_POOLS,
+    .var_data_config = {
+    { .size = IMX_POOL_0_SIZE, .no_entries = IMX_NO_POOL_0 },
+    { .size = IMX_POOL_1_SIZE, .no_entries = IMX_NO_POOL_1 },
+    { .size = IMX_POOL_2_SIZE, .no_entries = IMX_NO_POOL_2 },
+    { .size = IMX_POOL_3_SIZE, .no_entries = IMX_NO_POOL_3 },
+    { .size = IMX_POOL_4_SIZE, .no_entries = IMX_NO_POOL_4 },
+    { .size = IMX_POOL_5_SIZE, .no_entries = IMX_NO_POOL_5 },
+    { .size = IMX_POOL_6_SIZE, .no_entries = IMX_NO_POOL_6 },
+    },
     .led_functions = {
         {
             imx_init_led_red_ismart,

@@ -31,7 +31,7 @@
 
 /** @file hal_functions.h
 *
-*  Created on: Nov 10, 2017
+*  Created on: Dec 04, 2017
 *  Author: Auto Generated Code Do NOT Modify
 *
 */
@@ -72,10 +72,18 @@ uint32_t get_flash_size(void);
 uint32_t get_last_device_address(void);
 uint16_t get_no_at_controls(void);
 uint16_t get_no_at_sensors(void);
+#ifdef IMX_SCB_WI_FI_CHANNEL
 uint16_t imx_get_wifi_channel_scb(void);
+#endif
+#ifdef IMX_SCB_WI_FI_RSSI
 uint16_t imx_get_wifi_rssi_scb(void);
+#endif
+#ifdef IMX_SCB_WI_FI_BSSID
 uint16_t imx_get_wifi_bssid_scb(void);
+#endif
+#ifdef IMX_SCB_WI_FI_RF_NOISE
 uint16_t imx_get_wifi_rf_noise_scb(void);
+#endif
 
 /**
 * @brief Controls
